@@ -1,0 +1,37 @@
+digraph G {
+    graph [rankdir=LR, size="8.5,11", ratio=fill, orientation=portrait];
+    node [shape=ellipse, fontsize=10];
+    edge [fontsize=8];
+    "index.php" -> "head.php";
+    "index.php" -> "menu.php";
+    "index.php" -> "menu_logic.php";
+    "index.php" -> "search_box.php";
+    "index.php" -> "ingredient_input_area.php";
+    "index.php" -> "macro_values_box.php";
+    "index.php" -> "saved_meals_list.php";
+    "index.php" -> "add_ingredient_form.php";
+    "index.php" -> "foot.php";
+    "add_ingredient.php" -> "db.php";
+    "menu_logic.php" -> "hjem.php";
+    "menu_logic.php" -> "side1.php";
+    "menu_logic.php" -> "side2.php";
+    "menu_logic.php" -> "side3.php";
+    "menu_logic.php" -> "hjem.php";
+    "save_meal.php" -> "db.php";
+    "delete_meal.php" -> "db.php";
+    "side1.php" -> "db.php";
+    "side2.php" -> "db.php";
+    "delete_ingredient.php" -> "db.php";
+    "search_meals.php" -> "db.php";
+    "get_meals.php" -> "db.php";
+    "get_ingredients.php" -> "db.php";
+    "head.php" -> "db.php";
+    "head.php" -> "functions.php";
+    "switch_page.php" -> "hjem.php";
+    "switch_page.php" -> "side1.php";
+    "switch_page.php" -> "side2.php";
+    "switch_page.php" -> "side3.php";
+    "switch_page.php" -> "hjem.php";
+    "calculate.php" -> "db.php";
+    "search.php" -> "db.php";
+}
