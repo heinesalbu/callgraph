@@ -71,13 +71,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $graph = buildDependencyGraph($dir);
         $dot = generateGraphViz($graph);
 
-        $dotFile = 'graph.dot';
-        $svgFile = 'graph.svg';
+        $dotFile = '/var/www/callgraph/graph.dot';
+        $svgFile = '/var/www/callgraph/graph.svg';
 
         file_put_contents($dotFile, $dot);
         exec("dot -Tsvg $dotFile -o $svgFile");
 
-        header("Location: index.php?image=$svgFile");
+        $svgContent = file_get_contents($svgFile);
+        echo $svgContent; // Returner SVG-innholdet
     } catch (Exception $e) {
         echo 'Error: ' . $e->getMessage() . "\n";
     }
